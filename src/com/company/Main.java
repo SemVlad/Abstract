@@ -6,8 +6,8 @@ public class Main {
 
         // oven реализация
         Oven oven = new Oven(4343, "Electrolux");
-        System.out.println("Серийный номер духовки = ");  //??
-        System.out.println("Бренд духовки: "); // ??
+        System.out.println("Серийный номер духовки = " + oven.getSerialNum());
+        System.out.println("Бренд духовки: " + oven.getName());
         oven.initTimer(120);
         oven.cook();
         oven.powerOff();
@@ -15,9 +15,8 @@ public class Main {
 
         // dial phone реализация
         DialPhone dialPhone = new DialPhone(23243, "Phone", false);
-        // как достать поля из конструктора или родительского класса???
-        System.out.println("Серийный номер телефона = ");
-        System.out.println("Бренд телефона: ");
+        System.out.println("Серийный номер телефона = " + dialPhone.getSerialNum());
+        System.out.println("Бренд телефона: " + dialPhone.getName());
         dialPhone.call();
         System.out.println("");
 
@@ -33,7 +32,8 @@ public class Main {
 
         // multicook реализация
         Multicook multicook = new Multicook(786346, "Redmond");
-        System.out.println("Мультиварка");
+        System.out.println("Мультиварка " + multicook.getName());
+        System.out.println("Серийный номер " + multicook.getSerialNum());
         multicook.switchProgram(3);
         multicook.cook();
         System.out.println("Что-то как-то приготовилось");
@@ -45,9 +45,11 @@ public class Main {
         Post post = new Post();
         System.out.println(post.createMail("mail"));
         post.sendMail("mail");
+        System.out.println(" ");
 
         // интерфейс Caller
-        DialPhone dialPh = new DialPhone(false);
+        dialPhone.call();
+        System.out.println("Разговор окончен ");
         System.out.println(" ");
 
         // smartPhone интерфейс
@@ -69,16 +71,16 @@ public class Main {
     public static void offAll(AbstractDevice... devices) {
         for (AbstractDevice device : devices) {
             device.powerOff();
-            System.out.println(device);
+            System.out.println(device.getClass());
             System.out.println(" ");
         }
     }
 
-    // метод для выключения всего п2
+    // метод для рассылки п2
     public static void sendAll(MailSender... devices) {
         for (MailSender device : devices) {
             device.sendMail("Рассылка");
-            System.out.println(device);
+            System.out.println(device.getClass());
             System.out.println(" ");
         }
     }

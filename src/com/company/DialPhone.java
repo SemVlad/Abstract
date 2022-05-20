@@ -24,7 +24,6 @@ public class DialPhone extends Phone implements Caller {
         System.out.println("Положи трубку и заблокируй телефон");
     }
 
-    // в интерфесе тоже есть этот метод , как его использовать тут ?
     @Override
     public void call() {
         System.out.println("Пошел вызов");

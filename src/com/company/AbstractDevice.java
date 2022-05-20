@@ -10,6 +10,14 @@ public abstract class AbstractDevice {
         this.name = name;
     }
 
+    public int getSerialNum() {
+        return serialNum;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     protected AbstractDevice() {
         powerOn();
     }

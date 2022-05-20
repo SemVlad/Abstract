@@ -23,8 +23,6 @@ public class SmartPhone extends Mobile implements Caller, EmailSender {
 
     }
 
-    /// если есть метод в интерфейсе и в родительском классе: какой используется?
-    // можно ли переопределить один и тот же метод и интерфейса и родительсокго класса?
     @Override
     public void call() {
         System.out.println("звоним с интерфейса");
